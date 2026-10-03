@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Student Management System</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="topbar">
+        <h1>Student Management System</h1>
+        <div class="topbar-right">
+            <span id="welcomeMsg">Welcome</span>
+            <button id="logoutBtn" class="btn btn-secondary">Logout</button>
+        </div>
+    </header>
+
+    <main class="container">
+        <div id="errorBox" class="alert alert-error hidden"></div>
+        <div id="infoBox" class="alert alert-success hidden"></div>
+
+        <section class="card">
+            <h2 id="formTitle">Add Student</h2>
+            <form id="studentForm">
+                <input type="hidden" id="studentId">
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="age">Age</label>
+                        <input type="number" id="age" min="1" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="course">Course</label>
+                        <input type="text" id="course" required>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" id="submitBtn" class="btn btn-primary">Add Student</button>
+                    <button type="button" id="cancelEditBtn" class="btn btn-secondary hidden">Cancel</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="card">
+            <h2>All Students</h2>
+            <table class="student-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Age</th>
+                        <th>Course</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="studentTableBody">
+                    <!-- rows injected by dashboard.js -->
+                </tbody>
+            </table>
+            <p id="emptyState" class="empty-state hidden">No students yet. Add one above!</p>
+        </section>
+    </main>
+
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

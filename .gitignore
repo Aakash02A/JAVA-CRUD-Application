@@ -1,0 +1,34 @@
+target/
+*.class
+*.log
+.idea/
+*.iml
+.vscode/
+.DS_Store
+
+# Local environment files
+.env
+.env.*
+!.env.example
+!.env.*.example
+application-local.properties
+application-local.yml
+application-local.yaml
+
+# Credentials and secret files
+/credentials/
+/secrets/
+credentials*.json
+service-account*.json
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+
+# Local cloud and SSH credentials
+.aws/
+.azure/
+.gcloud/
+.ssh/
